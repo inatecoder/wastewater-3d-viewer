@@ -11,27 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const INTERACTIVE_POINTS = [
         {
             name: 'Screening',
-            slide: 'slides/01_screening.png',
+            slide: 'images/01_screening.png',
             position: { top: '38%', left: '28%' }
         },
         {
             name: 'Grit Chamber',
-            slide: 'slides/02_primary_treatment.png', // Assuming this corresponds to primary treatment
+            slide: 'images/02_primary_treatment.png', // Assuming this corresponds to primary treatment
             position: { top: '80%', left: '20%' }
         },
         {
             name: 'Aeration Tank',
-            slide: 'slides/03_secondary_treatment.png',
+            slide: 'images/03_secondary_treatment.png',
             position: { top: '40%', left: '65%' }
         },
         {
             name: 'Secondary Clarifier',
-            slide: 'slides/04_sludge_management.png', // Sludge is managed from here
+            slide: 'images/04_sludge_management.png', // Sludge is managed from here
             position: { top: '48%', left: '80%' }
         },
         {
             name: 'Disinfection',
-            slide: 'slides/05_tertiary_treatment.png',
+            slide: 'images/05_tertiary_treatment.png',
             position: { top: '30%', left: '88%' }
         }
     ];
@@ -70,34 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    raycaster.setFromCamera(mouse, camera);
-
-    const intersects = raycaster.intersectObjects(stages);
-
-    if (intersects.length > 0) {
-        const clickedObject = intersects[0].object;
-        stageName.innerText = clickedObject.name;
-        stageInfo.innerText = clickedObject.userData.info;
-        
-        // Set the slide image source
-        stageSlide.src = clickedObject.userData.slide;
-
-        infoPanel.style.display = 'block';
-    } else {
-        // Optional: hide panel if clicking outside an object
-        // infoPanel.style.display = 'none';
-        // stageVideo.src = '';
-    }
-}
-
-// Animation loop
-function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-}
-
 // Start animation
 animate();
