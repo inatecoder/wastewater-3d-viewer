@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const welcomeOverlay = document.getElementById('welcome-overlay');
+    const enterBtn = document.getElementById('enter-btn');
+
+    enterBtn.addEventListener('click', () => {
+        welcomeOverlay.style.opacity = '0';
+        // After the fade-out transition, set display to none so it doesn't block interactions
+        welcomeOverlay.addEventListener('transitionend', () => {
+            welcomeOverlay.style.display = 'none';
+        }, { once: true }); // The event listener should only run once
+    });
+
     const mainContainer = document.getElementById('main-container');
     const infoPanel = document.getElementById('info-panel');
     const stageName = document.getElementById('stage-name');

@@ -11,12 +11,62 @@
             background-color: #f0f2f5;
             color: #333;
         }
+        /* Welcome Screen Styles */
+        #welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            transition: opacity 0.5s ease-out;
+        }
+        .welcome-content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .welcome-content h2 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .welcome-content p {
+            margin: 0 0 20px 0;
+            font-size: 1.2em;
+        }
+        .team-names {
+            font-style: italic;
+            font-size: 1.4em !important;
+        }
+        #enter-btn {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            color: #2575fc;
+            background-color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #enter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content Styles */
         #main-container {
             position: relative;
             width: 100%;
-            max-width: 1200px; /* Adjust as needed */
+            max-width: 1200px;
             margin: 20px auto;
-            /* This container will hold the image and the icons */
         }
         #flowchart-img {
             width: 100%;
@@ -80,6 +130,15 @@
 </head>
 <body>
 
+    <div id="welcome-overlay">
+        <div class="welcome-content">
+            <h2>Interactive Wastewater Treatment</h2>
+            <p>A Project By:</p>
+            <p class="team-names">Lohith, Mellisa, Ayaan & Rakshogna</p>
+            <button id="enter-btn">Click to Begin</button>
+        </div>
+    </div>
+
     <div id="main-container">
         <img id="flowchart-img" src="images/flowchart.jpg" alt="Wastewater Treatment Flowchart">
         <!-- Interactive icons will be injected here by JavaScript -->
@@ -91,7 +150,7 @@
         <img id="stage-slide" src="" alt="Wastewater Stage Slide">
     </div>
 
-    <script type="module" src="js/main.js?v=1.2"></script>
+    <script type="module" src="js/main.js?v=1.3"></script>
 
 </body>
 </html>
