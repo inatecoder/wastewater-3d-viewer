@@ -70,5 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// Start animation
-animate();
+
