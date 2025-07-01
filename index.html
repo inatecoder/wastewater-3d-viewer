@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Wastewater Treatment Plant</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #1a2a3a;
+            color: white;
+        }
+        #scene-container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        #info-panel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px; /* Increased width for video */
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 1px solid #55aaff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            text-align: center;
+        }
+        #info-panel h2 {
+            margin-top: 0;
+            color: #55aaff;
+            font-size: 1.8rem;
+        }
+        #info-panel p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        #slide-container img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 16px;
+            border: 1px solid #55aaff;
+        }
+        #close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #title-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        #title-overlay h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+         #title-overlay p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="scene-container"></div>
+
+    <div id="title-overlay">
+        <h1>3D Wastewater Treatment Plant</h1>
+        <p>Click on a stage to learn more</p>
+    </div>
+
+    <div id="info-panel">
+        <button id="close-button">X</button>
+        <h2 id="stage-name"></h2>
+        <p id="stage-info"></p>
+        <div id="slide-container">
+            <img id="stage-slide" src="" alt="Wastewater Stage Slide" />
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
