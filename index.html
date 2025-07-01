@@ -16,6 +16,7 @@
             width: 100%;
             max-width: 1200px; /* Adjust as needed */
             margin: 20px auto;
+            /* This container will hold the image and the icons */
         }
         #flowchart-img {
             width: 100%;
@@ -76,35 +77,21 @@
             color: #888;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="scene-container"></div>
 
-    <div id="title-overlay">
-        <h1>3D Wastewater Treatment Plant</h1>
-        <p>Click on a stage to learn more</p>
+    <div id="main-container">
+        <img id="flowchart-img" src="images/flowchart.jpg" alt="Wastewater Treatment Flowchart">
+        <!-- Interactive icons will be injected here by JavaScript -->
     </div>
 
     <div id="info-panel">
-        <button id="close-button">X</button>
+        <button id="close-btn">&times;</button>
         <h2 id="stage-name"></h2>
-        <p id="stage-info"></p>
-        <div id="slide-container">
-            <img id="stage-slide" src="" alt="Wastewater Stage Slide" />
-        </div>
+        <img id="stage-slide" src="" alt="Wastewater Stage Slide">
     </div>
 
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
-            }
-        }
-    </script>
-    <script type="module" src="js/main.js?v=1.1"></script>
+    <script type="module" src="js/main.js?v=1.2"></script>
+
 </body>
 </html>
