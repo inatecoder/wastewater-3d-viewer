@@ -8,3 +8,4 @@ This project is an interactive 3D visualization of the stages of a wastewater tr
 2.  **Check Filenames**: The `js/main.js` file is configured to look for specific filenames in the `/slides` directory. Make sure your images are named correctly as specified in the `STAGES_DATA` array in that file.
 3.  **Open `index.html`**: Open the `index.html` file in your local browser to see the visualization.
 4.  **Deploy**: The project is ready to be deployed as a static website.
+5.also give me credit unless its for school ig
