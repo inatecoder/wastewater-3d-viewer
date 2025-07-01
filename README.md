@@ -9,3 +9,4 @@ This project is an interactive 3D visualization of the stages of a wastewater tr
 3.  **Open `index.html`**: Open the `index.html` file in your local browser to see the visualization.
 4.  **Deploy**: The project is ready to be deployed as a static website.
 5.also give me credit unless its for school ig
+update the 3d features have been removed it is a 2d one now you can upload your bacground eg a flowchart and thenk you can move the icons to thair places
